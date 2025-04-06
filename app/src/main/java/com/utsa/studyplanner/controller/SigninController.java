@@ -1,5 +1,9 @@
 package com.utsa.studyplanner.controller;
 
+/* This class causes errors, delete comment if needed
+
+
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
@@ -13,6 +17,13 @@ public class SigninController implements View.OnClickListener {
      * Iain Summerlin - tea587
      *
      */
+
+
+
+    /* This class causes errors, delete comment if needed
+
+
+
     @Override
     public void onClick(View view) {
         Context context = view.getContext();
@@ -34,3 +45,7 @@ public class SigninController implements View.OnClickListener {
         }
     }
 }
+
+
+
+*/ // This class causes errors, delete comment if needed
