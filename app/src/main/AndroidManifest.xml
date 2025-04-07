@@ -9,6 +9,10 @@
         android:theme="@style/Theme.StudyPlanner">
 
         <activity android:name=".HomeActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".ActivitiesActivity" />
+        <activity android:name=".ProfileActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
