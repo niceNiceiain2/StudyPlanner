@@ -1,8 +1,8 @@
-package com.utsa.studyplanner.controller;
-
 /* This class causes errors, delete comment if needed
 
 
+
+package com.utsa.studyplanner.controller;
 
 import android.content.Context;
 import android.content.Intent;
