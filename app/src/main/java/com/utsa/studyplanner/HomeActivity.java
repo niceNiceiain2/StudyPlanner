@@ -16,7 +16,7 @@ public class HomeActivity extends AppCompatActivity {
         // Welcome message setup
         String username = getIntent().getStringExtra("username");
         TextView welcomeText = findViewById(R.id.welcomeMessage);
-        welcomeText.setText("Hi, " + username + "!");
+        welcomeText.setText("Test Test 123, " + username + "!");
 
         // Navigation buttons
         ImageButton calendarButton = findViewById(R.id.calendarButton);
