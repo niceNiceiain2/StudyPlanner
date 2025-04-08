@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/home_ic"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigation_calendar"
+        android:icon="@drawable/calendar_ic"
+        android:title="Calendar" />
+
+    <item
+        android:id="@+id/navigation_add"
+        android:icon="@drawable/add_ic"
+        android:title="Add" />
+
+    <item
+        android:id="@+id/navigation_activities"
+        android:icon="@drawable/activities_ic"
+        android:title="Activities" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/profile_ic"
+        android:title="Profile" />
+
+</menu>

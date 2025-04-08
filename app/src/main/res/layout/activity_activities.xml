@@ -5,19 +5,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalendarActivity">
+    tools:context=".ActivitiesActivity">
 
     <TextView
         android:id="@+id/screenTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
-        android:text="Activities Screen"
+        android:layout_marginTop="124dp"
+        android:text="Activities"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:id="@+id/filterRow"
+        android:layout_width="383dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/screenTitle">
+
+        <ImageButton
+            android:id="@+id/filterAll"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="24dp"
+            android:background="@null"
+            android:contentDescription="All Tasks"
+            android:src="@drawable/all_tasks_ic" />
+
+        <ImageButton
+            android:id="@+id/filterAssignments"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="24dp"
+            android:background="@null"
+            android:contentDescription="Assignments"
+            android:src="@drawable/assignments_ic" />
+
+        <ImageButton
+            android:id="@+id/filterExams"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="24dp"
+            android:background="@null"
+            android:contentDescription="Exams"
+            android:src="@drawable/exams_ic" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activityRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:contentDescription="List of study tasks"
+        app:layout_constraintTop_toBottomOf="@id/filterRow"
+        app:layout_constraintBottom_toTopOf="@id/addTaskButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_task" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addTaskButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="28dp"
+        android:contentDescription="Add Task"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/add_ic" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 

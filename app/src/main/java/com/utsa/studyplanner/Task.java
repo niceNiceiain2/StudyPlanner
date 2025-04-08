@@ -1,0 +1,15 @@
+package com.utsa.studyplanner;
+
+public class Task {
+    public String type;        // "Assignment" or "Exam"
+    public String title;       // e.g., "CS Exam Review"
+    public String description; // e.g., "Chapters 1-3"
+    public String time;        // e.g., "2PM - 4PM"
+
+    public Task(String type, String title, String description, String time) {
+        this.type = type;
+        this.title = title;
+        this.description = description;
+        this.time = time;
+    }
+}
