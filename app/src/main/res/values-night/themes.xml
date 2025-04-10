@@ -1,16 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!-- Base application dark theme (Twitter style) -->
     <style name="Theme.StudyPlanner" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+
+        <!-- Backgrounds -->
+        <item name="android:colorBackground">#15202B</item> <!-- Main background -->
+        <item name="colorSurface">#192734</item> <!-- Card/Panel backgrounds -->
+
+        <!-- Primary color and text/icons -->
+        <item name="colorPrimary">#1DA1F2</item> <!-- Twitter blue -->
+        <item name="colorPrimaryVariant">#1A91DA</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Secondary color -->
+        <item name="colorSecondary">#8899A6</item> <!-- Muted gray for accents -->
+        <item name="colorSecondaryVariant">#AAB8C2</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+
+        <!-- Text on dark background -->
+        <item name="colorOnBackground">#FFFFFF</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+
+        <!-- Status bar -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+        <!-- Customize your dark theme here -->
     </style>
+
 </resources>

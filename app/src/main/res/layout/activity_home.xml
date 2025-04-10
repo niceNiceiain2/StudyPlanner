@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:padding="32dp">
 
+    <!-- Welcome Message -->
     <TextView
         android:id="@+id/welcomeMessage"
         android:layout_width="wrap_content"
@@ -13,51 +14,165 @@
         android:layout_marginTop="108dp"
         android:text="Welcome!"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
 
-    <!-- Bottom Navigation Bar -->
+    <!-- Due Today Header -->
+    <TextView
+        android:id="@+id/dueTodayHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Due Today"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/welcomeMessage"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <ImageButton
-        android:id="@+id/calendarButton"
+    <!-- Due Today Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/dueTodayCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:background="@null"
-        android:contentDescription="Calendar"
-        android:src="@drawable/calendar_ic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/activitiesButton"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginBottom="32dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/peach"
+    app:layout_constraintTop_toBottomOf="@id/dueTodayHeader"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
 
-    <ImageButton
-        android:id="@+id/activitiesButton"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/dueTodayContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:background="@null"
-        android:contentDescription="Activities"
-        android:src="@drawable/activities_ic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/profileButton"
-        app:layout_constraintStart_toEndOf="@id/calendarButton" />
+        android:orientation="vertical"
+        android:padding="12dp"/>
+</androidx.cardview.widget.CardView>
 
-    <ImageButton
-        android:id="@+id/profileButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@null"
-        android:contentDescription="Profile"
-        android:src="@drawable/profile_ic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/activitiesButton" />
+    <!-- Due Later Header -->
+<TextView
+android:id="@+id/dueLaterHeader"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Due Later"
+android:textSize="18sp"
+android:textStyle="bold"
+    android:layout_marginTop="12dp"
+app:layout_constraintTop_toBottomOf="@id/dueTodayCard"
+app:layout_constraintStart_toStartOf="parent"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Due Later Card -->
+<androidx.cardview.widget.CardView
+android:id="@+id/dueLaterCard"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginTop="8dp"
+android:layout_marginBottom="16dp"
+app:cardCornerRadius="8dp"
+app:cardElevation="4dp"
+app:cardBackgroundColor="@color/peach"
+app:layout_constraintTop_toBottomOf="@id/dueLaterHeader"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintEnd_toEndOf="parent">
+
+<LinearLayout
+    android:id="@+id/dueLaterContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"/>
+</androidx.cardview.widget.CardView>
+
+    <!-- Bottom Navigation -->
+<LinearLayout
+android:id="@+id/calendarSection"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:gravity="center"
+android:layout_marginEnd="8dp"
+android:layout_marginBottom="16dp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintEnd_toStartOf="@+id/activitiesSection">
+
+<ImageButton
+    android:id="@+id/calendarButton"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:background="@null"
+    android:contentDescription="Calendar"
+    android:src="@drawable/calendar_ic"
+    android:tint="?attr/colorOnBackground"/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Calendar"
+    android:textSize="12sp"
+    android:textColor="?attr/colorOnBackground"/>
+</LinearLayout>
+
+<LinearLayout
+android:id="@+id/activitiesSection"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:gravity="center"
+android:layout_marginEnd="8dp"
+android:layout_marginBottom="16dp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toEndOf="@id/calendarSection"
+app:layout_constraintEnd_toStartOf="@id/profileSection">
+
+<ImageButton
+    android:id="@+id/activitiesButton"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:background="@null"
+    android:contentDescription="Activities"
+    android:src="@drawable/activities_ic"
+    android:tint="?attr/colorOnBackground"/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Activities"
+    android:textSize="12sp"
+    android:textColor="?attr/colorOnBackground"/>
+</LinearLayout>
+
+<LinearLayout
+android:id="@+id/profileSection"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:gravity="center"
+android:layout_marginBottom="16dp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toEndOf="@id/activitiesSection"
+app:layout_constraintEnd_toEndOf="parent">
+
+<ImageButton
+    android:id="@+id/profileButton"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:background="@null"
+    android:contentDescription="Profile"
+    android:src="@drawable/profile_ic"
+    android:tint="?attr/colorOnBackground"/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Profile"
+    android:textSize="12sp"
+    android:textColor="?attr/colorOnBackground"/>
+</LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+

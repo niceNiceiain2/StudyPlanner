@@ -3,20 +3,240 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    android:fitsSystemWindows="true"
     tools:context=".ProfileActivity">
 
+    <!-- Screen Title -->
     <TextView
         android:id="@+id/screenTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="60dp"
         android:text="Profile Screen"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Profile Icon -->
+    <ImageView
+        android:id="@+id/profileIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="Profile Icon"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_ic"
+        android:tint="?attr/colorOnBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/screenTitle" />
 
+    <!-- Username -->
+    <TextView
+        android:id="@+id/usernameDisplay"
+        android:layout_width="255dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="Username"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/profileIcon"
+        app:layout_constraintTop_toTopOf="@id/profileIcon" />
+
+    <!-- Bio -->
+    <EditText
+        android:id="@+id/bioInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Add a short bio... (50 Characters)"
+        android:textSize="14sp"
+        android:maxLines="3"
+        android:maxLength="50"
+        android:inputType="textCapSentences|textMultiLine"
+        app:layout_constraintTop_toBottomOf="@id/usernameDisplay"
+        app:layout_constraintStart_toEndOf="@id/profileIcon"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Stats Box -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/statsCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@id/profileIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stats"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"
+                android:layout_marginVertical="8dp" />
+
+            <TextView
+                android:id="@+id/totalTasksCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tasks Created: ###" />
+
+            <TextView
+                android:id="@+id/totalAssignmentsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Assignments Created: ###" />
+
+            <TextView
+                android:id="@+id/totalExamsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exams Created: ###" />
+
+            <TextView
+                android:id="@+id/tasksCompletedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tasks Completed: ###" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"
+                android:layout_marginVertical="8dp" />
+
+            <TextView
+                android:id="@+id/currentStreakCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Day Streak: ###" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Settings Button + Label -->
+    <LinearLayout
+        android:id="@+id/settingsWrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="432dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:contentDescription="Settings"
+            android:src="@drawable/settings_ic"
+            android:tint="?attr/colorOnBackground" />
+
+        <TextView
+            android:id="@+id/settingsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="12sp"
+            android:textColor="?attr/colorOnBackground"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <!-- Settings Panel -->
+    <LinearLayout
+        android:id="@+id/settingsPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="#EEEEEE"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Dark Mode Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/darkModeIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/dark_mode_ic"
+                android:contentDescription="Dark Mode Icon" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/darkModeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enable Dark Mode"
+                android:textColor="@color/textColorPrimary"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+
+        <!-- Military Time Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/time_ic"
+                android:contentDescription="Military Time Icon" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/militaryTimeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use Military Time"
+                android:textColor="@color/textColorPrimary"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/resetStatsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset Stats"
+            android:layout_marginTop="12dp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/purple_700"
+            android:minHeight="48dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

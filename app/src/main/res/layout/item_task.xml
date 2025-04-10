@@ -28,21 +28,32 @@
             android:layout_height="wrap_content"
             android:text="Title"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/taskDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Description"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/taskTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3PM - 5PM"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+        <CheckBox
+            android:id="@+id/taskCompletedCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Completed"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp" />
     </LinearLayout>
 
     <ImageButton
@@ -51,8 +62,8 @@
         android:layout_height="40dp"
         android:src="@android:drawable/ic_menu_delete"
         android:contentDescription="Delete Task"
+        android:tint="@android:color/black"
         android:layout_alignParentEnd="true"
         android:background="?attr/selectableItemBackgroundBorderless" />
 </RelativeLayout>
-
 

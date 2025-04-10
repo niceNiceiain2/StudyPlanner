@@ -42,12 +42,12 @@
         android:layout_height="wrap_content"
         android:minHeight="48dp"/>
 
-    <EditText
-        android:id="@+id/timeInput"
-        android:hint="Time (e.g., 3PM - 5PM)"
+    <Button
+        android:id="@+id/dateTimeButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"/>
+        android:text="Pick Date And Time"
+        android:layout_marginTop="12dp"/>
 
     <Button
         android:id="@+id/saveTaskButton"
@@ -55,5 +55,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"/>
+
 </LinearLayout>
 
