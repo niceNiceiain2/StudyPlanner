@@ -28,7 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
     private static final String KEY_TOTAL_EXAMS = "total_exams";
     private static final String KEY_COMPLETED_TASKS = "tasks_completed";
     private static final String KEY_STREAK_DAYS = "streak_days";
-    private static final String KEY_MILITARY_TIME = "military_time_enabled"; // ⏰ New setting
+    private static final String KEY_MILITARY_TIME = "military_time_enabled";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

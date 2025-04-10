@@ -55,7 +55,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                 SharedPreferences prefs = holder.itemView.getContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
                 int completedCount = prefs.getInt("tasks_completed", 0);
                 prefs.edit().putInt("tasks_completed", completedCount + 1).apply();
-                task.counted = true; // ✅ Prevent future re-counting
+                task.counted = true; // Prevent future re-counting
             }
 
             task.completed = isChecked;
